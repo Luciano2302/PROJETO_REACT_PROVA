@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { RootState, Dispatch } from '../redux/store';  // Tipo de RootState
 import { fetchUsers } from '../redux/actions/userActions';  // Ação do Redux
 import { User } from '../types/user';  // Tipo User
-
+//TESTE
 
 const UserList: React.FC = () => {
   const dispatch: Dispatch = useDispatch();  // Usando useDispatch sem tipagem explícita
