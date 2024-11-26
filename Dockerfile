@@ -5,13 +5,16 @@ FROM node:18-alpine
 WORKDIR /app
 
 # Copia os arquivos de dependências para o contêiner
-COPY package*.json ./
+COPY package*.json tsconfig.json ./
 
 # Instala as dependências
-RUN npm install
+RUN npm install --legacy-peer-deps
 
 # Copia todo o código do projeto para o contêiner
 COPY . .
+
+# Compila o TypeScript (se necessário)
+RUN npm run build
 
 # Expõe a porta padrão do React (3000)
 EXPOSE 3000
